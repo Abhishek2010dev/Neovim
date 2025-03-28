@@ -38,6 +38,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Setup Mason and Mason-LSPConfig
+local noop = function() end
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "rust_analyzer" },
@@ -45,6 +46,7 @@ require("mason-lspconfig").setup({
 		function(server_name)
 			require("lspconfig")[server_name].setup({})
 		end,
+		rust_analyzer = noop,
 	},
 })
 
