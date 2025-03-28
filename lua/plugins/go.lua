@@ -1,3 +1,3 @@
 return {
-	{ "fatih/vim-go.git" },
+	{ "fatih/vim-go" },
 }

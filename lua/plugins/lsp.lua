@@ -11,11 +11,6 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"rust_analyzer",
-					"goimports",
-					"gofumpt",
-					"gomodifytags",
-					"impl",
-					"delve",
 					"lua_ls",
 					"tsserver",
 					"gopls",
@@ -25,11 +20,9 @@ return {
 					"htmx-lsp",
 					"templ",
 					"prettier",
-					"golangci-lint",
 					"stylua",
 				},
 			})
-			require("mason").install_all()
 		end,
 	},
 
