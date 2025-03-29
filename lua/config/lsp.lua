@@ -57,9 +57,29 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Setup Mason and Mason-LSPConfig
 local noop = function() end
+
+local ensure_installed = vim.tbl_keys(servers or {})
+vim.list_extend(ensure_installed, {
+	"rust_analyzer",
+	"lua_ls",
+	"gopls",
+	"html",
+	"cssls",
+	"tailwindcss",
+	"htmx-lsp",
+	"templ",
+	"prettier",
+	"goimports",
+	"gofumpt",
+	"gomodifytags",
+	"impl",
+})
+require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "rust_analyzer" },
+	ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+	automatic_installation = false,
 	handlers = {
 		function(server_name)
 			require("lspconfig")[server_name].setup({})
