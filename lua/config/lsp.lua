@@ -70,6 +70,7 @@ vim.list_extend(ensure_installed, {
 	"templ",
 	"prettier",
 	"goimports",
+	"jdtls",
 	"gofumpt",
 	"gomodifytags",
 	"impl",
