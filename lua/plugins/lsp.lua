@@ -10,6 +10,8 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
+	'hrsh7th/cmp-path',
+	'hrsh7th/cmp-nvim-lsp-signature-help',
 	{
 		"williamboman/mason.nvim",
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
