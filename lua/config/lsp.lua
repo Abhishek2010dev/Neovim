@@ -52,10 +52,11 @@ require("mason-lspconfig").setup({
 
 -- Configure cmp (completion)
 local cmp = require("cmp")
-
+require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "luasnip" }, -- F
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
@@ -63,7 +64,7 @@ cmp.setup({
 	},
 	snippet = {
 		expand = function(args)
-			vim.snippet.expand(args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({}),

@@ -4,9 +4,16 @@ return {
 	{ "hrsh7th/nvim-cmp" },
 	{ "j-hui/fidget.nvim",    opts = {} },
 	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		},
+	},
+	{
 		"williamboman/mason.nvim",
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
-               		config = function()
+		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
