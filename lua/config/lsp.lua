@@ -89,19 +89,40 @@ require("mason-lspconfig").setup({
 })
 
 -- Configure cmp (completion)
+
 local cmp = require("cmp")
+local lspkind = require('lspkind')
+
 require("luasnip.loaders.from_vscode").lazy_load()
+
 cmp.setup({
 	sources = {
 		{
 			name = 'lazydev',
-			-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
 			group_index = 0,
 		},
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 		{ name = 'path' },
 		{ name = 'nvim_lsp_signature_help' },
+	},
+	formatting = {
+		format = lspkind.cmp_format({
+			mode = 'symbol_text', -- Show both symbol and text
+			maxwidth = 50,
+			ellipsis_char = '...', -- Use ellipsis for truncation
+			show_labelDetails = true,
+			before = function(entry, vim_item)
+				vim_item.menu = ({
+					nvim_lsp = "[LSP]",
+					luasnip = "[Snip]",
+					path = "[Path]",
+					nvim_lsp_signature_help = "[Sig]",
+					buffer = "[Buf]"
+				})[entry.source.name] or "[Other]"
+				return vim_item
+			end
+		})
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
@@ -115,7 +136,6 @@ cmp.setup({
 	completion = { completeopt = 'menu,menuone,noinsert' },
 	mapping = cmp.mapping.preset.insert({}),
 })
-
 -- Autoformat before saving
 local buffer_autoformat = function(bufnr)
 	local group = "lsp_autoformat"
