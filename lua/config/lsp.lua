@@ -74,6 +74,7 @@ vim.list_extend(ensure_installed, {
 	"gofumpt",
 	"gomodifytags",
 	"impl",
+	"codelldb",
 })
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
