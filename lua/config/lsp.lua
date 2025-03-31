@@ -75,6 +75,7 @@ vim.list_extend(ensure_installed, {
 	"gomodifytags",
 	"impl",
 	"codelldb",
+	"prettier",
 })
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

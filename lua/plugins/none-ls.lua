@@ -15,6 +15,7 @@ return {
 					nls.builtins.code_actions.impl,
 					nls.builtins.formatting.goimports,
 					nls.builtins.formatting.gofumpt,
+					nls.builtins.formatting.prettier
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then
