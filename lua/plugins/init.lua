@@ -2,13 +2,6 @@ return {
 	'tpope/vim-sleuth',
 	{ 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		config = function()
-			require("ibl").setup()
-		end
-	},
-	{
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require('nvim-ts-autotag').setup({
@@ -23,7 +16,7 @@ return {
 				-- doesn't work well in a specific filetype
 				per_filetype = {
 					["html"] = {
-						enable_close = false
+						enable_close = true
 					}
 				}
 			})
