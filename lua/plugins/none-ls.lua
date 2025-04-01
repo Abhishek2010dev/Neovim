@@ -13,9 +13,10 @@ return {
 				sources = {
 					nls.builtins.code_actions.gomodifytags,
 					nls.builtins.code_actions.impl,
+					nls.builtins.formatting.sqlfluff,
 					nls.builtins.formatting.goimports,
 					nls.builtins.formatting.gofumpt,
-					nls.builtins.formatting.prettier
+					nls.builtins.diagnostics.sqlfluff
 				},
 				on_attach = function(client, bufnr)
 					if client.supports_method("textDocument/formatting") then

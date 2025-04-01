@@ -76,6 +76,7 @@ vim.list_extend(ensure_installed, {
 	"impl",
 	"codelldb",
 	"prettier",
+	"sqlfluff",
 })
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -97,6 +98,13 @@ local cmp = require("cmp")
 local lspkind = require('lspkind')
 
 require("luasnip.loaders.from_vscode").lazy_load()
+
+cmp.setup.filetype({ "sql" }, {
+	sources = {
+		{ name = "vim-dadbod-completion" },
+		{ name = "buffer" }
+	},
+})
 
 cmp.setup({
 	sources = {
