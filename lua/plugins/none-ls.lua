@@ -16,6 +16,7 @@ return {
 					nls.builtins.formatting.sqlfluff,
 					nls.builtins.formatting.goimports,
 					nls.builtins.formatting.gofumpt,
+					nls.builtins.formatting.prettier,
 					nls.builtins.diagnostics.sqlfluff
 				},
 				on_attach = function(client, bufnr)

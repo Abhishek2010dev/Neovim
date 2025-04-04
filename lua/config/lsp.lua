@@ -69,6 +69,7 @@ vim.list_extend(ensure_installed, {
 	"htmx-lsp",
 	"templ",
 	"prettier",
+	"typescript-language-server",
 	"goimports",
 	"jdtls",
 	"gofumpt",
