@@ -1,14 +1,12 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require("conform").setup({
+    local conform = require("conform")
+
+    conform.setup({
       formatters_by_ft = {
-        lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
-        python = { "isort", "black" },
-        -- You can customize some of the format options for the filetype (:help conform.format)
-        rust = { "rustfmt", lsp_format = "fallback" },
+        templ = { "templ " }
       },
       format_on_save = {
         lsp_fallback = true,
@@ -18,11 +16,11 @@ return {
     })
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-      require("conform").format({
+      conform.format({
         lsp_fallback = true,
         async = false,
         timeout_ms = 1000,
       })
-    end)
-  end
+    end, { desc = "Format file or range (in visual mode)" })
+  end,
 }
