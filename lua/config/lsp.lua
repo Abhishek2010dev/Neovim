@@ -68,7 +68,6 @@ vim.list_extend(ensure_installed, {
 	"tailwindcss",
 	"htmx-lsp",
 	"templ",
-	"prettier",
 	"typescript-language-server",
 	"goimports",
 	"jdtls",
@@ -78,6 +77,7 @@ vim.list_extend(ensure_installed, {
 	"codelldb",
 	"prettier",
 	"sqlfluff",
+	"pyright",
 })
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
