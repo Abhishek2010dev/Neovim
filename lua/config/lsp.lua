@@ -71,6 +71,7 @@ vim.list_extend(ensure_installed, {
 	"tailwindcss-language-server",
 	"goimports",
 	"jdtls",
+	"eslint-lsp",
 	"gofumpt",
 	"gomodifytags",
 	"impl",
