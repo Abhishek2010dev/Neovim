@@ -3,6 +3,7 @@
 This is my custom Neovim setup, designed for efficiency, performance, and a smooth development experience. The configuration is written in **Lua** and managed with **Lazy.nvim**.
 
 ## 📂 Directory Structure
+
 ```
 .
 ├── init.lua                # Main Neovim configuration entry point
@@ -32,6 +33,7 @@ This is my custom Neovim setup, designed for efficiency, performance, and a smoo
 ```
 
 ## 📊 Code Stats
+
 ```
 ===============================================================================
  Language            Files        Lines         Code     Comments       Blanks
@@ -45,6 +47,7 @@ This is my custom Neovim setup, designed for efficiency, performance, and a smoo
 ```
 
 ## ⚡ Features
+
 - **Minimal & Fast**: Optimized for speed without unnecessary bloat.
 - **LSP Support**: Integrated Language Server Protocol for better coding experience.
 - **Autocomplete & Formatting**: Auto-pairing, linting, and formatting.
@@ -53,10 +56,11 @@ This is my custom Neovim setup, designed for efficiency, performance, and a smoo
 - **Rust & Go Support**: Language-specific enhancements for Rust and Go.
 
 ## 🛠️ Installation
+
 1. Install Neovim (v0.9+ recommended).
 2. Clone this repository into your Neovim config directory:
    ```sh
-   git clone https://github.com/yourusername/nvim-config ~/.config/nvim
+   git clone https://github.com/Abhishek2010dev/Neovim ~/.config/nvim
    ```
 3. Open Neovim and install plugins:
    ```sh
@@ -65,12 +69,13 @@ This is my custom Neovim setup, designed for efficiency, performance, and a smoo
    Lazy.nvim will automatically install required plugins.
 
 ## 🔧 Customization
+
 Modify files inside `lua/config` and `lua/plugins` to tweak the setup to your liking.
 
 ## 📜 License
+
 This configuration is open-source and available under the MIT License.
 
 ---
+
 Enjoy coding with Neovim! 🚀
-
-
