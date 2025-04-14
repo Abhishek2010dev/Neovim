@@ -69,7 +69,7 @@ vim.list_extend(ensure_installed, {
 	"templ",
 	"typescript-language-server",
 	"tailwindcss-language-server",
-	"goimports",,
+	"goimports",
 	"eslint-lsp",
 	"gofumpt",
 	"gomodifytags",
