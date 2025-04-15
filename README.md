@@ -60,7 +60,7 @@ This is my custom Neovim setup, designed for efficiency, performance, and a smoo
 1. Install Neovim (v0.9+ recommended).
 2. Clone this repository into your Neovim config directory:
    ```sh
-   git clone https://github.com/Abhishek2010dev/Neovi ~/.config/nvim
+   git clone https://github.com/Abhishek2010dev/Neovim ~/.config/nvim
    ```
 3. Open Neovim and install plugins:
    ```sh
