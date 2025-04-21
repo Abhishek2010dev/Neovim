@@ -6,6 +6,10 @@ local lspconfig_defaults = require("lspconfig").util.default_config
 lspconfig_defaults.capabilities =
     vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+function hello(name)
+
+end
+
 -- Configure diagnostics to show inline errors
 vim.diagnostic.config {
 	severity_sort = true,
@@ -95,6 +99,13 @@ require("mason-lspconfig").setup({
 	},
 })
 
+require('spring_boot').init_lsp_commands()
+require("lspconfig").jdtls.setup {
+	init_options = {
+		bundles = require("spring_boot").java_extensions(),
+	},
+}
+
 -- Configure cmp (completion)
 
 local cmp = require("cmp")
@@ -110,6 +121,9 @@ cmp.setup.filetype({ "sql" }, {
 })
 
 cmp.setup({
+	experimental = {
+		ghost_text = true,
+	},
 	sources = {
 		{
 			name = 'lazydev',
