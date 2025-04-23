@@ -99,12 +99,6 @@ require("mason-lspconfig").setup({
 	},
 })
 
-require('spring_boot').init_lsp_commands()
-require("lspconfig").jdtls.setup {
-	init_options = {
-		bundles = require("spring_boot").java_extensions(),
-	},
-}
 
 -- Configure cmp (completion)
 
