@@ -100,19 +100,62 @@ local lspconfig = require "lspconfig"
 
 lspconfig.ts_ls.setup {
 	init_options = {
-		plugins = { -- I think this was my breakthrough that made it work
+		plugins = {
 			{
-				name = "@vue/typescript-plugin",
-				location = "/usr/local/lib/node_modules/@vue/language-server",
-				languages = { "vue" },
+				name = '@vue/typescript-plugin',
+				location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+				languages = { 'vue' },
 			},
 		},
 	},
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+	settings = {
+		typescript = {
+			tsserver = {
+				useSyntaxServer = false,
+			},
+			inlayHints = {
+				includeInlayParameterNameHints = 'all',
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
+			},
+		},
+	},
 }
 
-lspconfig.volar.setup {}
-
+lspconfig.volar.setup {
+	init_options = {
+		vue = {
+			hybridMode = false,
+		},
+	},
+	settings = {
+		typescript = {
+			inlayHints = {
+				enumMemberValues = {
+					enabled = true,
+				},
+				functionLikeReturnTypes = {
+					enabled = true,
+				},
+				propertyDeclarationTypes = {
+					enabled = true,
+				},
+				parameterTypes = {
+					enabled = true,
+					suppressWhenArgumentMatchesName = true,
+				},
+				variableTypes = {
+					enabled = true,
+				},
+			},
+		},
+	},
+}
 -- Configure cmp (completion)
 
 local cmp = require("cmp")
