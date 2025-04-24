@@ -6,9 +6,6 @@ local lspconfig_defaults = require("lspconfig").util.default_config
 lspconfig_defaults.capabilities =
     vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-function hello(name)
-
-end
 
 -- Configure diagnostics to show inline errors
 vim.diagnostic.config {
@@ -72,7 +69,7 @@ vim.list_extend(ensure_installed, {
 	"htmx-lsp",
 	"templ",
 	"typescript-language-server",
-	"tailwindcss-language-server",
+	"tailwindcss-language-server", -- ...
 	"goimports",
 	"eslint-lsp",
 	"gofumpt",
@@ -99,6 +96,22 @@ require("mason-lspconfig").setup({
 	},
 })
 
+local lspconfig = require "lspconfig"
+
+lspconfig.ts_ls.setup {
+	init_options = {
+		plugins = { -- I think this was my breakthrough that made it work
+			{
+				name = "@vue/typescript-plugin",
+				location = "/usr/local/lib/node_modules/@vue/language-server",
+				languages = { "vue" },
+			},
+		},
+	},
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+}
+
+lspconfig.volar.setup {}
 
 -- Configure cmp (completion)
 

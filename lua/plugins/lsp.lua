@@ -1,9 +1,11 @@
 return {
-	{ "neovim/nvim-lspconfig" },
+	{
+		"neovim/nvim-lspconfig",
+	},
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/nvim-cmp" },
 	{ 'onsails/lspkind.nvim' },
-	{ "j-hui/fidget.nvim",    opts = {} },
+	{ "j-hui/fidget.nvim",   opts = {} },
 	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
