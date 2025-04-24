@@ -69,7 +69,8 @@ vim.list_extend(ensure_installed, {
 	"htmx-lsp",
 	"templ",
 	"typescript-language-server",
-	"tailwindcss-language-server", -- ...
+	"tailwindcss-language-server",
+	"vue-language-server",
 	"goimports",
 	"eslint-lsp",
 	"gofumpt",
